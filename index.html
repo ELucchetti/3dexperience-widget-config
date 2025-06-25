@@ -1,38 +1,59 @@
 <!DOCTYPE html>
-<html lang="it">
+<html>
 <head>
   <meta charset="UTF-8" />
-  <title>Generatore di numeri</title>
+  <title>Widget UWA</title>
+  <script src="https://uwa.netvibes.com/lib/c/UWA/js/UWA.js"></script>
   <style>
     body {
       font-family: Arial, sans-serif;
-      padding: 20px;
-      background-color: #f4f4f4;
+      margin: 20px;
+      background: #f4f4f4;
     }
-    #widget-container {
+    #container {
       background: white;
       padding: 20px;
       border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
       text-align: center;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
     button {
-      padding: 10px 20px;
-      font-size: 16px;
-      margin-top: 10px;
-      cursor: pointer;
-      border: none;
-      border-radius: 5px;
       background-color: #1976d2;
       color: white;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
     }
-    #result {
+    #output {
       font-size: 24px;
       margin-top: 20px;
       color: #333;
     }
   </style>
 </head>
+<body>
+  <div id="container">
+    <h2>Generatore di numero</h2>
+    <button id="generateBtn">Genera</button>
+    <div id="output">Clicca sul bottone</div>
+  </div>
+
+  <script>
+    UWA.Event.onDOMReady(function () {
+      var btn = document.getElementById("generateBtn");
+      var output = document.getElementById("output");
+
+      btn.addEventListener("click", function () {
+        var numero = Math.floor(Math.random() * 99) + 1;
+        output.textContent = "Numero: " + numero;
+      });
+    });
+  </script>
+</body>
+</html>
+
 <body>
   <div id="widget-container">
     <h2>Generatore di numeri casuali</h2>
