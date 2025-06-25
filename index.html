@@ -33,25 +33,7 @@
     }
   </style>
 </head>
-<body>
-  <div id="container">
-    <h2>Generatore di numero</h2>
-    <button id="generateBtn">Genera</button>
-    <div id="output">Clicca sul bottone</div>
-  </div>
 
-  <script>
-    UWA.Event.onDOMReady(function () {
-      var btn = document.getElementById("generateBtn");
-      var output = document.getElementById("output");
-
-      btn.addEventListener("click", function () {
-        var numero = Math.floor(Math.random() * 99) + 1;
-        output.textContent = "Numero: " + numero;
-      });
-    });
-  </script>
-</body>
 </html>
 
 <body>
