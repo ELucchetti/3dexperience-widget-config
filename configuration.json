@@ -1,0 +1,12 @@
+{
+  "name": "MyFirstWidget",
+  "id": "myfirstwidget@custom",
+  "description": "Un widget di esempio che mostra un messaggio",
+  "icon": "fonticon fonticon-info",
+  "requires": ["UWA", "DS/UIKIT"],
+  "ui": {
+    "width": 6,
+    "height": 6
+  },
+  "entry": "index.html"
+}
