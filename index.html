@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>Widget con UWA</title>
+  <meta charset="UTF-8" />
+  <title>Generatore 3DEXPERIENCE</title>
   <script src="https://uwa.netvibes.com/lib/c/UWA/js/UWA.js"></script>
   <style>
     body {
-      font-family: sans-serif;
+      font-family: Arial, sans-serif;
       padding: 20px;
       background-color: #f0f0f0;
     }
-    #widget-box {
+    #box {
       background: white;
       padding: 20px;
       border-radius: 8px;
@@ -21,19 +21,24 @@
       margin-top: 10px;
       padding: 10px 20px;
       font-size: 16px;
-      background-color: #1976d2;
+      background-color: #007bff;
       color: white;
       border: none;
       border-radius: 6px;
       cursor: pointer;
     }
+    #output {
+      margin-top: 15px;
+      font-size: 18px;
+      color: #333;
+    }
   </style>
 </head>
 <body>
-  <div id="widget-box">
-    <h2>Generatore</h2>
-    <div id="output">Premi il pulsante</div>
+  <div id="box">
+    <h2>Generatore di numeri</h2>
     <button id="generateBtn">Genera numero</button>
+    <div id="output">Pronto a generare!</div>
   </div>
 
   <script>
@@ -42,8 +47,8 @@
       var output = document.getElementById("output");
 
       btn.addEventListener("click", function () {
-        var n = Math.floor(Math.random() * 99) + 1;
-        output.textContent = "Numero: " + n;
+        var numero = Math.floor(Math.random() * 99) + 1;
+        output.textContent = "Numero: " + numero;
       });
     });
   </script>
