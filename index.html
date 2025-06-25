@@ -2,68 +2,32 @@
 <html>
 <head>
   <meta charset="UTF-8" />
-  <title>Generatore 3DEXPERIENCE</title>
-  <script src="https://uwa.netvibes.com/lib/c/UWA/js/UWA.js"></script>
+  <title>Widget Basic</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: sans-serif;
       padding: 20px;
-      background-color: #f0f0f0;
-    }
-    #box {
-      background: white;
-      padding: 20px;
-      border-radius: 8px;
-      text-align: center;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    button {
-      margin-top: 10px;
-      padding: 10px 20px;
-      font-size: 16px;
-      background-color: #007bff;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
     }
     #output {
-      margin-top: 15px;
+      margin-top: 10px;
       font-size: 18px;
-      color: #333;
+      color: #444;
+    }
+    button {
+      padding: 10px 15px;
+      font-size: 16px;
     }
   </style>
 </head>
 <body>
-  <div id="box">
-    <h2>Generatore di numeri</h2>
-    <button id="generateBtn">Genera numero</button>
-    <div id="output">Pronto a generare!</div>
-  </div>
+  <h2>Generatore di numeri</h2>
+  <button onclick="genera()">Genera numero</button>
+  <div id="output">Pronto!</div>
 
   <script>
-    // Attendi che la libreria UWA sia effettivamente caricata
-    if (typeof UWA !== "undefined") {
-      UWA.Event.onDOMReady(function () {
-        var btn = document.getElementById("generateBtn");
-        var output = document.getElementById("output");
-
-        btn.addEventListener("click", function () {
-          var numero = Math.floor(Math.random() * 99) + 1;
-          output.textContent = "Numero: " + numero;
-        });
-      });
-    } else {
-      // Fallback se UWA non viene caricato (es. nel browser normale)
-      document.addEventListener("DOMContentLoaded", function () {
-        var btn = document.getElementById("generateBtn");
-        var output = document.getElementById("output");
-
-        btn.addEventListener("click", function () {
-          var numero = Math.floor(Math.random() * 99) + 1;
-          output.textContent = "Numero: " + numero;
-        });
-      });
+    function genera() {
+      const n = Math.floor(Math.random() * 99) + 1;
+      document.getElementById('output').textContent = "Numero generato: " + n;
     }
   </script>
 </body>
